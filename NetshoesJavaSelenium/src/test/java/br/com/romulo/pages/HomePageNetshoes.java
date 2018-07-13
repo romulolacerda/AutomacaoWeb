@@ -34,5 +34,21 @@ public class HomePageNetshoes extends BasePage {
 
 		return new PaginaDeProdutos(navegador);
 	}
+	
+	public CadastroEnderecoNetshoes clicarEnderecos() {
+		navegador.findElement(By.xpath("//*[@id=\"header-user-logged\"]")).click();
+		navegador.findElement(By.xpath("//*[@id=\"header-user-logged\"]/ul/li[3]/a")).click();
+		System.out.println("Clica em Endereços");
+		
+		return new CadastroEnderecoNetshoes(navegador);
+	}
+	
+	public LoginPageNetshoes clicarEntrar() {
+		navegador.findElement(By.xpath("//div[@id='header-user-anonymous']")).click();
+		navegador.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
+
+		return new LoginPageNetshoes(navegador);
+		
+	}
 
 }
